@@ -52,24 +52,23 @@ def isArmstrong (x):
 
 @app.route('/',methods=['POST','GET'])
 def root():
-   dummy_times = []
-   message=''
-   if request.method=='POST':
-	number = int(request.form["number1"])
+    dummy_times = []
+    message=''
+    if request.method=='POST':
+        number = int(request.form["number1"])
 	if request.form['submit_button'] == 'Check Armstrong':
-		if(isArmstrong(number)):
-			message=request.form["number1"]+' is a Armstrong Number.'
-		else:
-			message=request.form["number1"] + ' is not a Armstrong number'
-	else:
-		i=1
-		dummy_times.append('All armstrong numbers till '+request.form["number1"]+' are :')
-		while i<=int(request.form["number1"]):
-			if(isArmstrong(i)):
-				dummy_times.append(i)
-			i=i+1
-	
-	
+	    if(isArmstrong(number)):
+	        message=request.form["number1"]+' is a Armstrong Number.'
+	    else:
+	        message=request.form["number1"] + ' is not a Armstrong number'
+        else:
+	    i=1
+	    dummy_times.append('All armstrong numbers till '+request.form["number1"]+' are :')
+	    while i<=int(request.form["number1"]):
+	        if(isArmstrong(i)):
+		    dummy_times.append(i)
+		i=i+1
+    
     return render_template('index.html',message=message,times=dummy_times)
 
 #@app.route('/input',methods=['POST'])
