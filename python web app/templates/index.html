@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <title>Armstrong Number</title>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <h1>Armstrong Number</h1>
+<p>Armstrong Number : A positive number is called armstrong number if it is equal to the sum of cubes of its digits.</p>
+<p>Example : 153 is an Armstrong number because 1*1*1 + 5*5*5 + 3*3*3 = 153</p>
+<p>120 is not a Armstrong number.
+1*1*1 + 2*2*2 + 0*0*0 = 9</p><br><br>
+
+      
+                <p>Enter your number:</p>
+                <form method="POST" action=".">
+                    <p><input name="number1" /></p>
+                   
+                    <p><input type="submit" name="submit_button" value="Check Armstrong" /><input type="submit" name="submit_button" value="Print Armstrong"></p>
+                </form>
+
+{% if message %}
+	<p>{{message}}</p>
+{% endif %}
+
+
+  {% for time in times %}
+    <p>{{ time }}</p>
+  {% endfor %}
+</body>
+</html>
